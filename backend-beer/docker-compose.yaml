@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    container_name: beer-database
+
+    environment:
+      POSTGRES_PASSWORD: 'password'
+      POSTGRES_USER: 'admin'
+      POSTGRES_DB: 'beer-db'
+
+    ports:
+      - '5432:5432'
+    volumes:
+      - './postgres:/var/lib/postgresql/data'
